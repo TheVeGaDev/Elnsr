@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة النسر الذهبي - نقل الأثاث المنزلي | أفضل شركة نقل أثاث</title>
-    <meta name="description" content="شركة متخصصة في نقل الأثاث المنزلي بالمملكة. فك وتركيب، تغليف آمن، نقل مضمون. أسعار منافسة وخدمة 24 ساعة">
-    <meta name="keywords" content="شركة نقل اثاث, نقل أثاث منزلي, فك وتركيب أثاث, نقل عفش, شركة نقل, نقل مكتبي">
+    <title>النسر الذهبي - نقل الأثاث المنزلي | مدينة نصر القاهرة</title>
+    <meta name="description" content="شركة النسر الذهبي المتخصصة في نقل الأثاث المنزلي بمدينة نصر القاهرة. فك وتركيب، تغليف آمن، نقل مضمون. أسعار منافسة وخدمة 24 ساعة">
+    <meta name="keywords" content="شركة نقل اثاث, نقل أثاث منزلي, فك وتركيب أثاث, نقل عفش, شركة نقل, نقل مكتبي, مدينة نصر, القاهرة">
     <meta name="author" content="النسر الذهبي">
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="شركة النسر الذهبي - نقل الأثاث المنزلي">
-    <meta property="og:description" content="أفضل شركة نقل أثاث منزلي بمكة والرياض وجدة">
+    <meta property="og:title" content="النسر الذهبي - نقل الأثاث المنزلي | مدينة نصر القاهرة">
+    <meta property="og:description" content="أفضل شركة نقل أثاث منزلي بمدينة نصر القاهرة">
     <meta property="og:type" content="website">
     
     <!-- Font Awesome -->
@@ -323,10 +323,59 @@
             animation: float 3s ease-in-out infinite;
         }
 
-        /* Stats Counter - Like C++ increment operator */
-        .stats {
+        /* Contact Info Section */
+        .contact-info {
             background: linear-gradient(135deg, var(--primary-color), #2980b9);
             color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Stats Counter - Like C++ increment operator */
+        .stats {
+            background: var(--light-color);
+            color: var(--dark-color);
             padding: 4rem 0;
             text-align: center;
         }
@@ -414,6 +463,10 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* C++ Inspired Console Effect */
@@ -433,14 +486,30 @@
             color: #ffff00;
         }
 
-        /* Advanced Hover Effects */
-        .holographic-effect {
-            background: linear-gradient(45deg, 
-                rgba(255,255,255,0.1), 
-                rgba(255,255,255,0.2), 
-                rgba(255,255,255,0.1));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
     </style>
 </head>
@@ -455,7 +524,7 @@
     <div class="main-container">
         <!-- Promo Banner -->
         <div class="promo-banner">
-            🚚 خصم 20% على أول طلب نقل أثاث - خدمة 24 ساعة - اتصل الآن: 0123456789
+            🚚 خصم 20% على أول طلب نقل أثاث - خدمة 24 ساعة - اتصل الآن: 01116870575
         </div>
 
         <!-- Header -->
@@ -468,8 +537,8 @@
                     <ul>
                         <li><a href="#home">الرئيسية</a></li>
                         <li><a href="#services">خدماتنا</a></li>
-                        <li><a href="#about">من نحن</a></li>
                         <li><a href="#contact">اتصل بنا</a></li>
+                        <li><a href="#location">موقعنا</a></li>
                     </ul>
                 </nav>
             </div>
@@ -479,7 +548,7 @@
         <section class="hero" id="home">
             <div class="hero-content">
                 <h1 id="typing-text"></h1>
-                <p>نقل أثاث باحترافية مع فريق مدرب وأحدث التقنيات</p>
+                <p>نقل أثاث باحترافية مع فريق مدرب وأحدث التقنيات بمدينة نصر القاهرة</p>
                 <button class="btn" onclick="scrollToSection('contact')">
                     <i class="fas fa-paper-plane"></i> ابدأ مشروعك الآن
                 </button>
@@ -491,10 +560,50 @@
             <div class="container">
                 <div class="section-title">
                     <h2>خدماتنا المتكاملة</h2>
-                    <p>حلول متكاملة لنقل وتغليف الأثاث</p>
+                    <p>حلول متكاملة لنقل وتغليف الأثاث بمدينة نصر والقاهرة</p>
                 </div>
                 <div class="services-grid" id="services-grid">
                     <!-- Services will be loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info Section -->
+        <section class="contact-info" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>تواصل معنا</h2>
+                    <p>نحن هنا لخدمتك على مدار 24 ساعة</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>اتصل بنا</h3>
+                        <a href="tel:01116870575">01116870575</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>واتساب</h3>
+                        <a href="https://wa.me/201116870575" target="_blank">01116870575</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>العنوان</h3>
+                        <p>مدينة نصر، القاهرة</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <h3>فيسبوك</h3>
+                        <a href="https://www.facebook.com/share/1aDxyPjtGo/" target="_blank">صفحتنا على فيسبوك</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -523,6 +632,25 @@
             </div>
         </section>
 
+        <!-- Location Section -->
+        <section id="location" style="padding: 4rem 0; background: var(--light-color);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>موقعنا</h2>
+                    <p>مدينة نصر، القاهرة - نخدم جميع مناطق القاهرة الكبرى</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
+                    <h3 style="text-align: center; margin-bottom: 1rem; color: var(--primary-color);">
+                        <i class="fas fa-map-marker-alt"></i> عنواننا
+                    </h3>
+                    <p style="text-align: center; font-size: 1.2rem; color: var(--dark-color);">
+                        مدينة نصر، القاهرة، مصر<br>
+                        نخدم جميع مناطق القاهرة الكبرى والجيزة
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Console Effect Section -->
         <section class="container" style="padding: 4rem 0;">
             <div class="console-effect" id="console-output">
@@ -532,17 +660,22 @@
         </section>
     </div>
 
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/201116870575" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
         // C++ Style Class Definition
         class MovingCompany {
             constructor() {
                 this.services = [
-                    { icon: '🚚', title: 'نقل الأثاث المنزلي', description: 'خدمة نقل آمنة مع فريق محترف' },
-                    { icon: '📦', title: 'التغليف والتعبئة', description: 'تغليف احترافي بمواد عالية الجودة' },
-                    { icon: '🏢', title: 'نقل المكاتب', description: 'نقل المعدات المكتبية بكفاءة' },
-                    { icon: '🔧', title: 'فك وتركيب الأثاث', description: 'فريق فني متخصص' },
-                    { icon: '🛡️', title: 'التأمين على الأثاث', description: 'تأمين كامل ضد الأضرار' },
-                    { icon: '🧹', title: 'التنظيف بعد النقل', description: 'تنظيف شامل للمنزل الجديد' }
+                    { icon: '🚚', title: 'نقل الأثاث المنزلي', description: 'خدمة نقل آمنة مع فريق محترف لجميع أنحاء القاهرة' },
+                    { icon: '📦', title: 'التغليف والتعبئة', description: 'تغليف احترافي بمواد عالية الجودة لحماية أثاثك' },
+                    { icon: '🏢', title: 'نقل المكاتب', description: 'نقل المعدات المكتبية بكفاءة لجميع الشركات' },
+                    { icon: '🔧', title: 'فك وتركيب الأثاث', description: 'فريق فني متخصص في فك وتركيب جميع أنواع الأثاث' },
+                    { icon: '🛡️', title: 'التأمين على الأثاث', description: 'تأمين كامل ضد الأضرار خلال عملية النقل' },
+                    { icon: '🧹', title: 'التنظيف بعد النقل', description: 'خدمة تنظيف شاملة للمنزل قبل التسليم' }
                 ];
                 this.init();
             }
@@ -557,13 +690,13 @@
 
             // Like C++ function with parameters
             typeWriterEffect() {
-                const text = "شركة النسر الذهبي لنقل الأثاث المنزلي";
+                const text = "النسر الذهبي لنقل الأثاث - مدينة نصر";
                 const element = document.getElementById('typing-text');
                 let i = 0;
                 
                 function type() {
                     if (i < text.length) {
-                        element.innerHTML = text.substring(0, i + 1) + '<span class="blinking-cursor">|</span>';
+                        element.innerHTML = text.substring(0, i + 1) + '<span style="border-right: 2px solid white; animation: blink 1s infinite;">|</span>';
                         i++;
                         setTimeout(type, 100);
                     } else {
@@ -700,30 +833,15 @@
         // Like C++ program execution
         document.addEventListener('DOMContentLoaded', main);
 
-        // Advanced cursor effect
-        document.addEventListener('mousemove', (e) => {
-            const cursor = document.querySelector('.cursor') || createCursor();
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        function createCursor() {
-            const cursor = document.createElement('div');
-            cursor.className = 'cursor';
-            cursor.style.cssText = `
-                position: fixed;
-                width: 20px;
-                height: 20px;
-                background: var(--secondary-color);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 9999;
-                mix-blend-mode: difference;
-                transition: transform 0.1s;
-            `;
-            document.body.appendChild(cursor);
-            return cursor;
-        }
+        // Add blink animation for cursor
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes blink {
+                0%, 50% { opacity: 1; }
+                51%, 100% { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
