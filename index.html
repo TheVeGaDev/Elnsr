@@ -8,774 +8,722 @@
     <meta name="keywords" content="شركة نقل اثاث, نقل أثاث منزلي, فك وتركيب أثاث, نقل عفش, شركة نقل, نقل مكتبي">
     <meta name="author" content="النسر الذهبي">
     
-    <!-- Open Graph tags for social media -->
+    <!-- Open Graph tags -->
     <meta property="og:title" content="شركة النسر الذهبي - نقل الأثاث المنزلي">
     <meta property="og:description" content="أفضل شركة نقل أثاث منزلي بمكة والرياض وجدة">
     <meta property="og:type" content="website">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* إعادة تعيين بعض الإعدادات الافتراضية */
+        /* CSS Variables - Inspired by C++ constants */
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #f39c12;
+            --accent-color: #e74c3c;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --success-color: #27ae60;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset - Like C++ initialization */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Cairo', sans-serif;
         }
         
         body {
             line-height: 1.6;
             color: #333;
-            background-color: #f9f9f9;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
-        
-        /* التنسيق العام */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+
+        /* Main Container - Like C++ main function */
+        .main-container {
+            background: white;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
         }
-        
-        /* بانر الإعلان */
+
+        /* Promo Banner - Like C++ constant expression */
         .promo-banner {
-            background: #e74c3c;
+            background: linear-gradient(90deg, var(--accent-color), #c0392b);
             color: white;
             text-align: center;
             padding: 12px;
             font-weight: bold;
             font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
         }
-        
-        /* رأس الصفحة */
+
+        .promo-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Header - Like C++ class */
         header {
-            background-color: #1a5276;
+            background: var(--primary-color);
             color: white;
             padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        
+
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--secondary-color), #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        
-        .logo span {
-            color: #f39c12;
+
+        .logo i {
+            margin-left: 10px;
         }
-        
+
+        /* Navigation - Like C++ linked list */
         nav ul {
             display: flex;
             list-style: none;
+            gap: 2rem;
         }
-        
-        nav ul li {
-            margin-right: 20px;
-        }
-        
-        nav ul li:last-child {
-            margin-right: 0;
-        }
-        
+
         nav ul li a {
             color: white;
             text-decoration: none;
-            transition: color 0.3s;
-            font-weight: bold;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        nav ul li a:hover::before {
+            left: 100%;
+        }
+
         nav ul li a:hover {
-            color: #f39c12;
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
         }
-        
-        /* قسم الهيرو */
+
+        /* Hero Section - Like C++ main program */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-            height: 80vh;
+            background: linear-gradient(135deg, rgba(26, 82, 118, 0.9), rgba(52, 152, 219, 0.9)), url('https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
-        
+
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: slideUp 1s ease-out;
         }
-        
+
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2.5rem;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            animation: slideUp 1s ease-out 0.2s both;
         }
-        
+
+        /* Animated Button - Like C++ function */
         .btn {
             display: inline-block;
-            background-color: #f39c12;
+            background: linear-gradient(45deg, var(--secondary-color), #e67e22);
             color: white;
             padding: 15px 35px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-weight: bold;
             font-size: 1.1rem;
-            transition: all 0.3s;
-            border: 2px solid #f39c12;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+            animation: pulse 2s infinite;
         }
-        
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
         .btn:hover {
-            background-color: transparent;
-            color: #f39c12;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
         }
-        
-        /* قسم الخدمات */
+
+        /* Services Section - Like C++ objects */
         .services {
             padding: 5rem 0;
-            background-color: white;
+            background: var(--light-color);
         }
-        
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .section-title h2 {
-            font-size: 2.2rem;
-            color: #1a5276;
+            font-size: 2.5rem;
+            color: var(--primary-color);
             margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
         }
-        
-        .section-title p {
-            color: #666;
-            font-size: 1.1rem;
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
         }
-        
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-        
+
         .service-card {
-            background-color: #f9f9f9;
-            border-radius: 10px;
+            background: white;
+            border-radius: 15px;
             padding: 2.5rem 2rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #eee;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
         }
-        
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
-        
+
         .service-icon {
             font-size: 3.5rem;
-            color: #f39c12;
+            color: var(--secondary-color);
             margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
         }
-        
-        .service-card h3 {
-            margin-bottom: 1rem;
-            color: #1a5276;
-            font-size: 1.4rem;
-        }
-        
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-        }
-        
-        /* قسم عن الشركة */
-        .about {
-            padding: 5rem 0;
-            background-color: #f5f5f5;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 1.8rem;
-            color: #1a5276;
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: #555;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-        
-        /* قسم المدونة */
-        .blog-section {
-            padding: 5rem 0;
-            background: white;
-        }
-        
-        .blog-posts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .blog-post {
-            background: #f9f9f9;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #eee;
-        }
-        
-        .blog-post:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .blog-post h3 {
-            color: #1a5276;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .blog-post p {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .blog-post a {
-            color: #f39c12;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        
-        .blog-post a:hover {
-            color: #e67e22;
-        }
-        
-        /* قسم الاتصال */
-        .contact {
-            padding: 5rem 0;
-            background-color: #1a5276;
+
+        /* Stats Counter - Like C++ increment operator */
+        .stats {
+            background: linear-gradient(135deg, var(--primary-color), #2980b9);
             color: white;
-        }
-        
-        .contact .section-title h2 {
-            color: white;
-        }
-        
-        .contact .section-title p {
-            color: #ddd;
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #f39c12;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        
-        /* تذييل الصفحة */
-        footer {
-            background-color: #0d3a5c;
-            color: white;
-            padding: 3rem 0 1rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h3 {
-            margin-bottom: 1.5rem;
-            color: #f39c12;
-            font-size: 1.3rem;
-        }
-        
-        .footer-section p {
-            color: #ddd;
-            line-height: 1.7;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-section ul li a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-        }
-        
-        .footer-section ul li a:hover {
-            color: #f39c12;
-            transform: translateX(5px);
-        }
-        
-        .copyright {
+            padding: 4rem 0;
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #aaa;
-            font-size: 0.9rem;
         }
-        
-        /* القائمة المتنقلة للهواتف */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: white;
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
         }
-        
-        /* التجاوب مع الشاشات المختلفة */
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, var(--secondary-color), #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Floating Elements - Like C++ pointers */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Animations - Like C++ algorithms */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        /* Responsive Design - Like C++ templates */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                text-align: center;
+                gap: 1rem;
             }
-            
-            .logo {
-                margin-bottom: 1rem;
-            }
-            
+
             nav ul {
                 flex-direction: column;
+                gap: 1rem;
             }
-            
-            nav ul li {
-                margin: 10px 0;
-            }
-            
-            .menu-toggle {
-                display: block;
-                position: absolute;
-                top: 1rem;
-                left: 1rem;
-            }
-            
-            .nav-menu {
-                display: none;
-                width: 100%;
-            }
-            
-            .nav-menu.active {
-                display: block;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .services-grid,
-            .blog-posts,
-            .footer-content {
+
+            .services-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .contact-form {
-                padding: 1.5rem;
-            }
         }
-        
-        /* تأثيرات إضافية */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
+
+        /* C++ Inspired Console Effect */
+        .console-effect {
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 1rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+
+        .console-effect::before {
+            content: '>> ';
+            color: #ffff00;
+        }
+
+        /* Advanced Hover Effects */
+        .holographic-effect {
+            background: linear-gradient(45deg, 
+                rgba(255,255,255,0.1), 
+                rgba(255,255,255,0.2), 
+                rgba(255,255,255,0.1));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
     </style>
 </head>
 <body>
-    <!-- بانر الإعلان -->
-    <div class="promo-banner">
-        📞 اتصل الآن: 0123456789 - خصم 20% على أول طلب نقل أثاث - خدمة 24 ساعة
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-element" style="width: 100px; height: 100px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+        <div class="floating-element" style="width: 150px; height: 150px; top: 60%; left: 80%; animation-delay: 2s;"></div>
+        <div class="floating-element" style="width: 80px; height: 80px; top: 80%; left: 20%; animation-delay: 4s;"></div>
     </div>
 
-    <!-- رأس الصفحة -->
-    <header>
-        <div class="container">
+    <div class="main-container">
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            🚚 خصم 20% على أول طلب نقل أثاث - خدمة 24 ساعة - اتصل الآن: 0123456789
+        </div>
+
+        <!-- Header -->
+        <header>
             <div class="header-content">
-                <div class="logo">النسر <span>الذهبي</span></div>
-                <button class="menu-toggle">☰</button>
-                <nav class="nav-menu">
+                <div class="logo">
+                    <i class="fas fa-feather-alt"></i>النسر الذهبي
+                </div>
+                <nav>
                     <ul>
                         <li><a href="#home">الرئيسية</a></li>
                         <li><a href="#services">خدماتنا</a></li>
                         <li><a href="#about">من نحن</a></li>
-                        <li><a href="#blog">المدونة</a></li>
                         <li><a href="#contact">اتصل بنا</a></li>
                     </ul>
                 </nav>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- قسم الهيرو -->
-    <section class="hero" id="home">
-        <div class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
             <div class="hero-content">
-                <h1>شركة النسر الذهبي لنقل الأثاث المنزلي</h1>
-                <p>نقدم خدمات نقل الأثاث المنزلي باحترافية وأمان، مع فريق مدرب وأحدث المعدات. خبرة 15 عاماً في نقل وتغليف الأثاث</p>
-                <a href="#contact" class="btn">اطلب خدمة الآن</a>
+                <h1 id="typing-text"></h1>
+                <p>نقل أثاث باحترافية مع فريق مدرب وأحدث التقنيات</p>
+                <button class="btn" onclick="scrollToSection('contact')">
+                    <i class="fas fa-paper-plane"></i> ابدأ مشروعك الآن
+                </button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- قسم الخدمات -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>خدماتنا المتكاملة</h2>
-                <p>نقدم مجموعة متكاملة من خدمات نقل الأثاث المنزلي بأعلى معايير الجودة</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🚚</div>
-                    <h3>نقل الأثاث المنزلي</h3>
-                    <p>خدمة نقل أثاث منزلي آمنة وسريعة مع فريق محترف ومدرب. نضمن وصول أثاثك بسلامة تامة</p>
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>خدماتنا المتكاملة</h2>
+                    <p>حلول متكاملة لنقل وتغليف الأثاث</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">📦</div>
-                    <h3>التغليف والتعبئة</h3>
-                    <p>تغليف وتعبئة آمنة للأثاث باستخدام أفضل المواد للحفاظ على قطعك. مواد تغليف عالية الجودة</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏢</div>
-                    <h3>نقل المكاتب</h3>
-                    <p>خدمات نقل متخصصة لمكاتب الشركات والمؤسسات بكفاءة عالية. نقل المعدات المكتبية بأمان</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>فك وتركيب الأثاث</h3>
-                    <p>فك وتركيب الأثاث باحترافية للحفاظ عليه أثناء عملية النقل. فريق فني متخصص</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛡️</div>
-                    <h3>التأمين على الأثاث</h3>
-                    <p>تأمين كامل على الأثاث المنقول ضد أي أضرار محتملة. نضمن راحة بالك</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🧹</div>
-                    <h3>التنظيف بعد النقل</h3>
-                    <p>خدمات تنظيف شاملة للمنزل الجديد بعد اتمام عملية النقل. منزل نظيف وجاهز للاستخدام</p>
+                <div class="services-grid" id="services-grid">
+                    <!-- Services will be loaded by JavaScript -->
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- قسم عن الشركة -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>من نحن</h2>
-                <p>شركة رائدة في مجال نقل الأثاث منذ أكثر من 15 عاماً</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>شركة النسر الذهبي - خبرة تمتد لأكثر من 15 عاماً</h3>
-                    <p>نحن شركة متخصصة في نقل الأثاث المنزلي والمكتبي، نتميز بفريق عمل مدرب على أعلى مستوى وأحدث المعدات والتقنيات في مجال النقل. نضمن لعملائنا خدمة سريعة وآمنة مع الحفاظ على قطع الأثاث من أي تلف.</p>
-                    <p>نقدم خدماتنا في جميع أنحاء المملكة، مع التزامنا بأعلى معايير الجودة والاحترافية في التعامل مع عملائنا الكرام. فريقنا مدرب على التعامل مع جميع أنواع الأثاث بدقة واحترافية.</p>
-                    <p>نسعى دائماً لتحقيق رضا العملاء من خلال تقديم خدمات متميزة بأسعار تنافسية، مع الحفاظ على المواعيد المتفق عليها والتزامنا الكامل بمعايير السلامة والأمان.</p>
-                    <a href="#contact" class="btn">تواصل معنا</a>
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="1500">0</div>
+                        <div class="stat-label">مشروع مكتمل</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">سنة خبرة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">عميل سعيد</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="24">0</div>
+                        <div class="stat-label">ساعة خدمة</div>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="فريق عمل شركة النسر الذهبي">
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- قسم المدونة -->
-    <section class="blog-section" id="blog">
-        <div class="container">
-            <div class="section-title">
-                <h2>نصائح ونشرات</h2>
-                <p>مقالات مفيدة حول نقل وتغليف الأثاث</p>
+        <!-- Console Effect Section -->
+        <section class="container" style="padding: 4rem 0;">
+            <div class="console-effect" id="console-output">
+                // نظام النسر الذهبي المتكامل
+                // جاهز لخدمتكم على مدار 24 ساعة
             </div>
-            <div class="blog-posts">
-                <div class="blog-post">
-                    <h3>نصائح لتغليف الأثاث قبل النقل</h3>
-                    <p>دليل شامل لكيفية تحضير الأثاث للنقل بطريقة آمنة. تعلم أفضل طرق تغليف القطع الحساسة والأجهزة الكهربائية للحفاظ عليها من التلف أثناء النقل.</p>
-                    <a href="#">اقرأ المزيد</a>
-                </div>
-                <div class="blog-post">
-                    <h3>كيف تختار أفضل شركة نقل أثاث</h3>
-                    <p>معايير مهمة يجب مراعاتها عند اختيار شركة النقل. تعرف على الأسئلة التي يجب طرحها والتأمينات المطلوبة قبل التعاقد مع أي شركة نقل.</p>
-                    <a href="#">اقرأ المزيد</a>
-                </div>
-                <div class="blog-post">
-                    <h3>أسعار نقل الأثاث في المملكة</h3>
-                    <p>دليل الأسعار والتكلفة التقريبية لنقل الأثاث. تعرف على العوامل المؤثرة في سعر النقل وكيفية توفير التكاليف دون التأثير على الجودة.</p>
-                    <a href="#">اقرأ المزيد</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم الاتصال -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>اتصل بنا</h2>
-                <p>تواصل معنا لطلب خدمة أو للحصول على استشارة مجانية</p>
-            </div>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">الاسم الكامل *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">رقم الهاتف *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">البريد الإلكتروني</label>
-                        <input type="email" id="email" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="city">المدينة *</label>
-                        <select id="city" name="city" required>
-                            <option value="">اختر المدينة</option>
-                            <option value="الرياض">الرياض</option>
-                            <option value="جدة">جدة</option>
-                            <option value="مكة">مكة</option>
-                            <option value="الدمام">الدمام</option>
-                            <option value="أخرى">أخرى</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="service">نوع الخدمة المطلوبة</label>
-                        <select id="service" name="service">
-                            <option value="نقل منزلي">نقل أثاث منزلي</option>
-                            <option value="نقل مكتبي">نقل أثاث مكتبي</option>
-                            <option value="فك وتركيب">فك وتركيب أثاث</option>
-                            <option value="تغليف">تغليف وتعبئة</option>
-                            <option value="أخرى">خدمة أخرى</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">الرسالة *</label>
-                        <textarea id="message" name="message" placeholder="أخبرنا عن تفاصيل طلبك..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%;">إرسال الطلب</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- تذييل الصفحة -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>شركة النسر الذهبي</h3>
-                    <p>شركة رائدة في مجال نقل الأثاث المنزلي والمكتبي، نقدم خدماتنا بجودة عالية وأسعار منافسة. خبرة 15 عاماً في خدمة العملاء.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>روابط سريعة</h3>
-                    <ul>
-                        <li><a href="#home">الرئيسية</a></li>
-                        <li><a href="#services">خدماتنا</a></li>
-                        <li><a href="#about">من نحن</a></li>
-                        <li><a href="#blog">المدونة</a></li>
-                        <li><a href="#contact">اتصل بنا</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>معلومات الاتصال</h3>
-                    <ul>
-                        <li><a href="tel:0123456789">📞 0123456789</a></li>
-                        <li><a href="tel:0555555555">📱 0555555555</a></li>
-                        <li><a href="mailto:info@alnasr.com">✉️ info@alnasr.com</a></li>
-                        <li>📍 الرياض، المملكة العربية السعودية</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>مواعيد العمل</h3>
-                    <ul>
-                        <li>السبت - الخميس: 8 ص - 10 م</li>
-                        <li>الجمعة: 4 م - 10 م</li>
-                        <li>خدمة الطوارئ: 24 ساعة</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; 2024 شركة النسر الذهبي لنقل الأثاث</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- زر واتساب عائم -->
-    <a href="https://wa.me/966555555555" class="whatsapp-float" target="_blank">
-        💬
-    </a>
+        </section>
+    </div>
 
     <script>
-        // القائمة المتنقلة للهواتف
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        });
-        
-        // إغلاق القائمة عند النقر على رابط
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.querySelector('.nav-menu').classList.remove('active');
-            });
-        });
-        
-        // معالجة نموذج الاتصال
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // جمع بيانات النموذج
-            const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                city: document.getElementById('city').value,
-                service: document.getElementById('service').value,
-                message: document.getElementById('message').value
-            };
-            
-            // هنا يمكنك إرسال البيانات لخادم أو خدمة بريد
-            console.log('بيانات النموذج:', formData);
-            
-            // رسالة نجاح
-            alert('شكراً لتواصلكم معنا! سنقوم بالرد عليكم في أقرب وقت ممكن.');
-            this.reset();
-        });
-        
-        // تأثير التمرير السلس للروابط
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        // C++ Style Class Definition
+        class MovingCompany {
+            constructor() {
+                this.services = [
+                    { icon: '🚚', title: 'نقل الأثاث المنزلي', description: 'خدمة نقل آمنة مع فريق محترف' },
+                    { icon: '📦', title: 'التغليف والتعبئة', description: 'تغليف احترافي بمواد عالية الجودة' },
+                    { icon: '🏢', title: 'نقل المكاتب', description: 'نقل المعدات المكتبية بكفاءة' },
+                    { icon: '🔧', title: 'فك وتركيب الأثاث', description: 'فريق فني متخصص' },
+                    { icon: '🛡️', title: 'التأمين على الأثاث', description: 'تأمين كامل ضد الأضرار' },
+                    { icon: '🧹', title: 'التنظيف بعد النقل', description: 'تنظيف شامل للمنزل الجديد' }
+                ];
+                this.init();
+            }
+
+            init() {
+                this.typeWriterEffect();
+                this.loadServices();
+                this.startCounters();
+                this.createFloatingElements();
+                this.addScrollEffects();
+            }
+
+            // Like C++ function with parameters
+            typeWriterEffect() {
+                const text = "شركة النسر الذهبي لنقل الأثاث المنزلي";
+                const element = document.getElementById('typing-text');
+                let i = 0;
+                
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML = text.substring(0, i + 1) + '<span class="blinking-cursor">|</span>';
+                        i++;
+                        setTimeout(type, 100);
+                    } else {
+                        element.innerHTML = text;
+                    }
                 }
+                type();
+            }
+
+            // Like C++ array iteration
+            loadServices() {
+                const grid = document.getElementById('services-grid');
+                this.services.forEach(service => {
+                    const card = this.createServiceCard(service);
+                    grid.appendChild(card);
+                });
+            }
+
+            // Like C++ object creation
+            createServiceCard(service) {
+                const card = document.createElement('div');
+                card.className = 'service-card';
+                card.innerHTML = `
+                    <div class="service-icon">${service.icon}</div>
+                    <h3>${service.title}</h3>
+                    <p>${service.description}</p>
+                `;
+                
+                // Add hover effect
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                });
+
+                return card;
+            }
+
+            // Like C++ counter increment
+            startCounters() {
+                const counters = document.querySelectorAll('.stat-number');
+                const speed = 200;
+
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const increment = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + increment);
+                            setTimeout(updateCount, 1);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
+            }
+
+            // Like C++ dynamic memory allocation
+            createFloatingElements() {
+                const container = document.querySelector('.floating-elements');
+                for (let i = 0; i < 8; i++) {
+                    const element = document.createElement('div');
+                    element.className = 'floating-element';
+                    element.style.cssText = `
+                        width: ${Math.random() * 100 + 50}px;
+                        height: ${Math.random() * 100 + 50}px;
+                        top: ${Math.random() * 100}%;
+                        left: ${Math.random() * 100}%;
+                        animation-delay: ${Math.random() * 6}s;
+                        background: rgba(255,255,255,${Math.random() * 0.1});
+                    `;
+                    container.appendChild(element);
+                }
+            }
+
+            // Like C++ event handling
+            addScrollEffects() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.service-card').forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(50px)';
+                    card.style.transition = 'all 0.6s ease-out';
+                    observer.observe(card);
+                });
+            }
+        }
+
+        // Like C++ main function
+        function main() {
+            const company = new MovingCompany();
+            
+            // Add console animations
+            const consoleElement = document.getElementById('console-output');
+            const messages = [
+                ">> نظام النقل الذكي جاهز",
+                ">> تحميل بيانات الخدمات...",
+                ">> الاتصال بخوادم النظام...",
+                ">> جميع الأنظمة تعمل بشكل طبيعي",
+                ">> جاهز لاستقبال طلباتكم 📞"
+            ];
+
+            let messageIndex = 0;
+            setInterval(() => {
+                consoleElement.textContent = messages[messageIndex];
+                messageIndex = (messageIndex + 1) % messages.length;
+            }, 3000);
+        }
+
+        // Utility functions
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
             });
+        }
+
+        // Like C++ program execution
+        document.addEventListener('DOMContentLoaded', main);
+
+        // Advanced cursor effect
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.cursor') || createCursor();
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
         });
+
+        function createCursor() {
+            const cursor = document.createElement('div');
+            cursor.className = 'cursor';
+            cursor.style.cssText = `
+                position: fixed;
+                width: 20px;
+                height: 20px;
+                background: var(--secondary-color);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                mix-blend-mode: difference;
+                transition: transform 0.1s;
+            `;
+            document.body.appendChild(cursor);
+            return cursor;
+        }
     </script>
 </body>
 </html>
